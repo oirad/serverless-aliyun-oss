@@ -1,0 +1,11 @@
+{
+  "Resources": {
+    "sls-client-bucket": {
+      "Type": "ALIYUN::OSS:Bucket",
+      "Properties": {
+        "BucketName": "to-be-replaced-by-serverless",
+        "Region": "to-be-replaced-by-serverless"
+      }
+    }
+  }
+}
