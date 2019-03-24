@@ -84,7 +84,7 @@ class AliyunOss {
   setBucketWebsite(bucketName) {
     const ossClient = this.provider.ossClient;
     const options = this.options;
-    return co(function* createBucket() {
+    return co(function* setBucketWebsite() {
       return yield ossClient.putBucketWebsite(bucketName, {
         index: options.indexDocument || 'index.html',
         error: options.errorDocument || 'index.html' 
@@ -96,8 +96,9 @@ class AliyunOss {
    */
   setBucketPublic(bucketName) {
     const ossClient = this.provider.ossClient;
-    return co(function* createBucket() {
-      return yield ossClient.putBucketACL(bucketName, 'oss-cn-shanghai', 'public-read');
+    const region = this.provider.options.region;
+    return co(function* setBucketPublic() {
+      return yield ossClient.putBucketACL(bucketName, `oss-${region}`, 'public-read');
     });
   }
   /**
