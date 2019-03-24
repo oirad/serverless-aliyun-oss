@@ -29,17 +29,24 @@ class AliyunCdn {
    * Creates a new bucket if is not existing
    */
   async createCdnIfNotExists() {
-    await this.createCdn();
+    if (this.options.domain) {
+      await this.createCdn();
+    } else {
+      const cdnUrl = `https://${this.getBucketName()}.oss-${this.provider.options.region}.aliyuncs.com`;
+      this.serverless.cli.log(`No domain specified, use default oss internet URL [${cdnUrl}] to access the website (if bucket located outside of Mainland China)`);
+    }
   }
 
   async createCdn() {
     const cdnClient = this.getCdnClient();
     const bucketUrl = `${this.getBucketName()}.oss-${this.provider.options.region}.aliyuncs.com`;
+    const domain = this.options.domain;
     return co(function* createCdn() {
       return cdnClient.request('AddCdnDomain', {
-        DomainName: 'cdn.oirad.me',
+        DomainName: domain,
         CdnType: 'web',
-        Sources: `[{"content":"${bucketUrl}","type":"domain"}]`
+        SourceType: 'oss',
+        Sources: `[{"content":"${bucketUrl}","type":"oss"}]`
       }, { method: 'POST' });
     });
   }

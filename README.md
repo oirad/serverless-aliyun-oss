@@ -46,6 +46,19 @@ serverless client remove
 
 ### Configuration Parameters
 
+**domain**
+
+_optional_, default `null`
+
+```yaml
+custom:
+  client:
+    domain: example.com
+```
+
+Use this parameter to specify the domain used for the CDN configuration to allow access to the OSS static site.
+If not specified, no CDN will be created.
+
 **bucketName**
 
 _optional_, default: `sls-{aliyun_account_id}-client`
