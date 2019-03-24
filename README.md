@@ -59,6 +59,27 @@ custom:
 Use this parameter to specify the domain used for the CDN configuration to allow access to the OSS static site.
 If not specified, no CDN will be created.
 
+
+**cdnScope**
+
+_optional_, default `global`
+
+```yaml
+custom:
+  client:
+    cdnScope: overseas
+```
+
+Use this parameter to specify the scope used for the CDN configuration to allow access to the OSS static site.
+
+Possible values:
+
+- `domestic` - Only within Mainland China
+- `global` - Both Mainland China and Overseas
+- `overseas` - Outside Mainland China only (Does not require ICP)
+
+Notice: If you want to use `global` or `domestic`, the domain you are using needs to have an ICP license.
+
 **bucketName**
 
 _optional_, default: `sls-{aliyun_account_id}-client`

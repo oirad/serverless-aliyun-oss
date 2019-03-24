@@ -2,7 +2,8 @@
 
 const AliyunOss = require('./deploy/aliyunOss');
 const AliyunOssRemove = require('./deploy/aliyunOssRemove');
-const AliyunCdn = require('./deploy/aliyunCdn');
+const AliyunCdn = require('./deploy/aliyunCdn')
+const AliyunCdnRemove = require('./deploy/aliyunCdnRemove');
 
 class AliyunIndex {
   constructor(serverless, options) {
@@ -36,7 +37,8 @@ class AliyunIndex {
 
     this.serverless.pluginManager.addPlugin(AliyunOss);
     this.serverless.pluginManager.addPlugin(AliyunOssRemove)
-    this.serverless.pluginManager.addPlugin(AliyunCdn);
+    this.serverless.pluginManager.addPlugin(AliyunCdn)
+    this.serverless.pluginManager.addPlugin(AliyunCdnRemove);
   }
 }
 

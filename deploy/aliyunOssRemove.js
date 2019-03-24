@@ -14,9 +14,6 @@ class AliyunOssRemove {
     );
 
     this.hooks = {
-      'before:client:remove': async () => {
-        console.log('before');
-      },
       'client:remove:remove': async () => {
         await this.removeArtifacts();
       }
