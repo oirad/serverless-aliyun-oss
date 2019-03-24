@@ -26,7 +26,7 @@
     "url": "https://github.com/oirad/serverless-aliyun-oss/issues"
   },
   "homepage": "https://github.com/oirad/serverless-aliyun-oss#readme",
-  "dependencies": [
+  "dependencies": { 
     "serverless-aliyun-function-compute": "^1.2.1"
-  ]
+  }
 }
