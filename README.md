@@ -10,9 +10,11 @@ npm install --save serverless-aliyun-oss
 
 This plugin needs [serverless-aliyun-function-compute](https://github.com/aliyun/serverless-aliyun-function-compute/) installed and configured to be able to interact with Aliyun.
 
-## Notice on usage
+## Notice on usage in Mainland China
 
 Even if the files are uploaded to OSS, they are not usable right away, a CDN needs to be bound to it to be able to access them directly as indicated [in an Aliyun communication](https://www.alibabacloud.com/notice/oss0813). 
+
+Other regions, such as HongKong allow direct access to the files as normal HTML pages.
 
 ## Usage
 
@@ -100,6 +102,16 @@ custom:
     ...
     errorDocument: file-name.ext
     ...
+```
+
+### CLI Parameters
+
+The region can be specified as a CLI parameter, like for the `serverless-aliyun-function-compute` plugin.
+
+For example:
+
+```bash
+serverless client deploy --region cn-hongkong
 ```
 
 ## Acknowledgements
