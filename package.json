@@ -1,6 +1,6 @@
 {
   "name": "serverless-aliyun-oss",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "description": "Deploy your serverless static website to Aliyun OSS",
   "main": "index.js",
   "scripts": {
@@ -25,5 +25,8 @@
   "bugs": {
     "url": "https://github.com/oirad/serverless-aliyun-oss/issues"
   },
-  "homepage": "https://github.com/oirad/serverless-aliyun-oss#readme"
+  "homepage": "https://github.com/oirad/serverless-aliyun-oss#readme",
+  "dependencies": [
+    "serverless-aliyun-function-compute": "^1.2.1"
+  ]
 }
