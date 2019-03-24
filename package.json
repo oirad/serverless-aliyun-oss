@@ -1,6 +1,6 @@
 {
   "name": "serverless-aliyun-oss",
-  "version": "0.0.2",
+  "version": "0.0.3",
   "description": "Deploy your serverless static website to Aliyun OSS",
   "main": "index.js",
   "scripts": {
